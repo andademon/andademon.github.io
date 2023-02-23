@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./plugins/fontawesome/css/all.min.css"/>
+    <title>MyPage</title>
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+        }
+        .container {
+            background-image: url("./img/intro-bg.jpg");
+            background-size: cover;
+            background-repeat: repeat-y;
+            height: 100%;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        } 
+        #taffy {
+            height: 300px;
+            width: auto;
+            border-radius: 50%;
+            margin: 50px;
+            animation: rotate 60s linear infinite;
+        }
+        #progress-line {
+            display: flex;
+        }
+        #time {
+            margin: 20px;
+        }
+        #player {
+            width: 100%;
+            visibility: visible;
+            /* visibility: hidden; */
+            position: fixed;
+            bottom: 0;
+        }
+        #player-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px white solid;
+            background-color: black;
+            opacity: 0.6;
+        }
+        .media-controls {
+            display: flex;
+        }
+        #time {
+            color: white;
+        }
+        header {
+            width: 100%;
+            /* background: -webkit-linear-gradient(top,black,); */
+            background-color: rgba(black,black,black,0.2);
+            opacity: 0.8;
+        }
+        .header-inner {
+            width: 100%;
+        }
+        .header-span {
+            color: white;
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+        footer {
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer-span {
+            color: white;
+            font-size: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+        .icon {
+            /* margin: 8px; */
+            color: white;
+            font-size: 20px;
+            margin: 10px;
+        }
+        p {
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            /* color: blueviolet; */
+            color: white;
+            margin-bottom: 20px;
+        }
+        button {
+            width: 100px;
+            height: 80px;
+            margin: 50px;
+            border-radius: 70%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            background-color: #9AC8E2;
+        }
+        @keyframes rotate {
+                from{
+                    tramsform:rotate(0deg);
+                }to{
+                    transform: rotate(360deg);
+                }
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-inner"></div>
+            <div class="menu">
+                <span class="header-span"><a href="#" style="color: white;">Home</a></span>
+                <span class="header-span"><a href="#" style="color: white;">Contact</a></span>
+            </div>
+        </header>
+        <div class="content"></div>
+        <div class="footer"></div>
+        <img src="./img/taffy.webp" id = "taffy">
+        <p>&#10024;Here Ethan, a student &#10024;&#128075;</p>
+        <p>Learning Java & Node.js & English</p>
+        <p>I like listening to music and watching vtuber</p>
+        <p>Have some music I like&#128071;</p>
+        <button>ClickMe</button>
+
+        <footer class="footer">
+            <span class="footer-span"><a href="https://github.com/Ethan0530" style="color: white;">@github</a></span>
+            <span class="footer-span">Email:3218497724@qq.com</span>
+        </footer>
+
+        <div id="player">
+            <audio id = "audio" src = "./source/A-SOUL - 传说的世界.mp3"></audio>
+            <div id="player-inner">
+                <div class="media-controls">
+                    <div class="icon" id="prev"><i class="fa-solid fa-backward"></i></div>
+                    <div class="icon" id="play"><i class="fa-solid fa-play"></i></div>
+                    <div class="icon" id="next"><i class="fa-solid fa-forward"></i></div>
+                </div>
+                <div id =  progress-line>
+                    <span id = "time"></span><input id = "progress" type="range" min="0" max="100" step="0.1" value="0" style="width: 500px;"><span id = "time"></span>
+                </div>
+                <div class="media-controls">
+                    <div class="icon"><i class="fa-solid fa-rectangle-xmark" id="close"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onload = function(){
+        setTimeout(() => {
+            starttime.innerHTML = "00:00"
+            endtime.innerHTML = changeTime(audio.duration);
+        },200)
+    }
+
+    function changeTime(duration){
+        let minute = duration / 60;
+        let second = duration % 60;
+        if(minute<10){
+            minute = "0" + parseInt(minute);
+        }
+        if(second<10){
+            second = "0" + parseInt(second);
+        }else{
+            second = parseInt(second);
+        }
+        return minute + ":" + second;
+    }
+    
+    let player = document.getElementById('player');
+    let audio = document.getElementById('audio');
+    let progressInput = document.getElementById('progress');
+    let taffy = document.getElementById('taffy');
+    let closebtn = document.getElementById('close');
+    taffy.style.animationPlayState = "paused";
+    let starttime = document.querySelectorAll('#time')[0];
+    let endtime = document.querySelectorAll("#time")[1];
+    
+    let playbtn = document.getElementById('play');
+    let btn1 = document.querySelector('button');
+
+    btn1.addEventListener('click', () => {
+        if(player.style.visibility == "hidden"){
+            player.style.visibility = "visible";
+        }
+    })
+
+    playbtn.addEventListener('click', () => {
+        if(!audio.paused){
+            audio.pause();
+            playbtn.firstChild.setAttribute("class","fa-solid fa-play");
+            taffy.style.animationPlayState = "paused"
+        }else{
+            audio.play();
+            playbtn.firstChild.setAttribute("class","fa-solid fa-pause")
+            taffy.style.animationPlayState = "running";
+        }
+    })
+
+    progressInput.addEventListener('input', () => {
+        const progress = progressInput.value / 100 * audio.duration;
+        audio.currentTime = progress;
+    })
+
+    audio.addEventListener('timeupdate', () => {
+        const progress = audio.currentTime / audio.duration * 100;
+        progressInput.value = progress;
+        starttime.innerHTML = changeTime(audio.currentTime);
+    })
+
+    audio.addEventListener('ended', () => {
+        playbtn.firstChild.setAttribute("class","fa-solid fa-play");
+        taffy.style.animationPlayState = "paused";
+    })
+
+    closebtn.addEventListener('click', () => {
+        audio.pause();
+        player.style.visibility = "hidden";
+    })
+</script>
+</html>
