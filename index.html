@@ -140,7 +140,7 @@
         </footer>
 
         <div id="player">
-            <audio id = "audio" src = "./source/A-SOUL - 传说的世界.mp3"></audio>
+            <audio id = "audio" src = "./source/1.mp3"></audio>
             <div id="player-inner">
                 <div class="media-controls">
                     <div class="icon" id="prev"><i class="fa-solid fa-backward"></i></div>
@@ -159,11 +159,12 @@
 </body>
 
 <script>
+    let player = document.getElementById('player');
     window.onload = function(){
         setTimeout(() => {
             starttime.innerHTML = "00:00"
             endtime.innerHTML = changeTime(audio.duration);
-        },200)
+        },1000)
     }
 
     function changeTime(duration){
@@ -180,7 +181,6 @@
         return minute + ":" + second;
     }
     
-    let player = document.getElementById('player');
     let audio = document.getElementById('audio');
     let progressInput = document.getElementById('progress');
     let taffy = document.getElementById('taffy');
