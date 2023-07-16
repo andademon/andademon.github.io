@@ -1,0 +1,70 @@
+.type-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.type-text {
+    font-family: monospace;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    color: black;
+    /* animation: type 4s steps(69); */
+}
+
+.type-text01 {
+    animation: type 3s steps(23);
+}
+.type-text02 {
+    opacity: 0;
+    animation: type 3s steps(43),fade-in 0.1s forwards;
+    animation-delay: 4s;
+}
+
+.type-text::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 100%;
+    border-right: 1px solid black;
+    animation: showInfinite 0.5s 8 both;
+}
+
+.type-text02::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 100%;
+    border-right: 1px solid white;
+    animation: showInfinite 0.5s 7 both;
+    animation-delay: 4s;
+}
+
+@keyframes type {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes showInfinite {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
