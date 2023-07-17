@@ -27,7 +27,6 @@ const getColorString = (layer) => {
     return `rgba(${red}, ${green}, ${blue}, ${opacity})`;
 };
 
-// const colorArray = ['green','blue','red'];
 let colorArray = [];
 for (let i = settings.depth; i > 0; i--) {
     colorArray.push(getColorString(i));
@@ -52,10 +51,6 @@ const getAngle = () => {
 };
 
 const clearCanvas = () => {
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // ctx.clearRect(0, 0, -canvas.width, -canvas.height);
-    // ctx.clearRect(0, 0, -canvas.width, canvas.height);
-    // ctx.clearRect(0, 0, canvas.width, -canvas.height);
     ctx.clearRect(-canvas.width/2, -canvas.height/2, canvas.width, canvas.height);
 };
 
@@ -66,7 +61,6 @@ const drawFractal = (x,y,length,angle,depth,pAngle) => {
     let endX_min = x + length * Math.cos(angle.minute + pAngle);
     let endY_min = y + length * Math.sin(angle.minute + pAngle);
 
-    // ctx.save();
     ctx.strokeStyle = colorArray[depth-1];
 
     ctx.beginPath();
@@ -83,9 +77,6 @@ const drawFractal = (x,y,length,angle,depth,pAngle) => {
 
     drawFractal(endX_sec,endY_sec,newLength,angle,depth - 1,angle.second - angle.hour - Math.PI + pAngle);
     drawFractal(endX_min,endY_min,newLength,angle,depth - 1,angle.minute - angle.hour - Math.PI + pAngle);
-    // ctx.translate(endX,endY);
-    // ctx.rotate(-angle.second)
-    // ctx.restore();
 };
 
 
@@ -96,6 +87,7 @@ function animate() {
     drawFractal(0,0,150,angle,settings.depth,0);
     window.requestAnimationFrame(animate);
 }
+
 function init(){
     window.requestAnimationFrame(animate);
 }

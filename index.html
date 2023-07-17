@@ -27,26 +27,17 @@
                     <div class="nav-btn-icon"></div>
                 </div>
             </div>
-
-            <!-- <div class="menu" style="display: flex;margin-top: 10px;flex-direction: column;">
-                <div class="menu-item"></div>
-                <div class="menu-item"></div>
-            </div> -->
         </header>
 
         <div class="content">
-            <div class="my-card">
+            <canvas id = "myCanvas" style="position: fixed;top: 0;left: 0;z-index: 0;height: 100%;width: 100%;"></canvas>
+            <script src="./js/FractalClock.js"></script>
+            <div class="my-card glassmorphism">
                 <div class="avatar-box"> 
                     <img id="avatar" src="./img/taffy.webp">
                 </div>
 
-                <!-- <div id = "canvas-container" style="width: 100%;height: 200px;position: relative;"> -->
-                    <!-- <canvas id = "myCanvas" style="position: absolute;top: 0;left: 0;z-index: -1;"></canvas>
-                    <script src="./js/FractalClock.js"></script> -->
-                <!-- </div> -->
-                
-
-                <!-- <div> -->
+                <div class="typing">
                     <div class="type-container">
                         <div>
                             <h3 class = "type-text type-text01">In case I don't see you</h3>
@@ -57,33 +48,32 @@
                             <h3 class = "type-text type-text02">good morning, good afternoon and good night</h3>
                         </div>
                     </div>
-                <!-- </div> -->
-
-            </div>
-
-            <div class="paragraph">
-                <div class="paragraph-title"><span>关于我</span></div>
-                <div class="paragraph-content">
-                    <span>你好,我是sd1，正在学习前端知识。</span>
-                    <br>
-                    <span></span>
                 </div>
+
             </div>
 
-            <div class="paragraph">
-                <div class="paragraph-title"><span>关于此博客</span></div>
-                <div class="paragraph-content">
-                    <span>心血来潮尝试着记录一下自己学到的知识(不一定准确)，还想记录一些关于生活的琐碎内容</span>
-                </div>
-            </div>
-            <!-- <div style="display: flex;justify-content: center;margin: 20px;">
-                <div style="height: 250px; width: 400px; background-color: #5bcefa;display: flex;align-items: center;">
-                    <div style="height: 150px;width: 100%;background-color: #f5a9b8;display: flex;align-items: center;">
-                        <div style="height: 50px;width: 100%;background-color: #ffffff;"></div>
+            <div class="main">
+                <div class="paragraph glassmorphism">
+                    <div class="paragraph-title"><span>关于我</span></div>
+                    <div class="paragraph-content">
+                        <span>你好,我是sd1。</span>
+                        <br>
+                        <ul style="margin-left: 20px;list-style-type: disc;">
+                            <li>在校学生，CS科班菜鸟，但是并不讨厌Programming，还是想学点东西。</li>
+                            <li>Front-end beginner，技术栈：JavaScript/React/Node</li>
+                            <li>爱好：Vtuber/Vocaloid/音游/历史模拟游戏</li>
+                        </ul>
+                        <br>
                     </div>
                 </div>
-            </div> -->
-                
+    
+                <div class="paragraph glassmorphism">
+                    <div class="paragraph-title"><span>关于此博客</span></div>
+                    <div class="paragraph-content">
+                        <span>心血来潮尝试着记录一下自己学到的知识，还想记录一些关于生活的琐碎内容。</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer>
@@ -91,13 +81,4 @@
         </footer>
     </div>
 </body>
-<script>
-    // var header_bar = document.querySelector('.header');
-    // header_bar.addEventListener('mouseenter', () => {
-    //     header_bar.classList.add('box-shadow');
-    // })
-    // header_bar.addEventListener('mouseleave', () => {
-    //     header_bar.classList.remove('box-shadow');
-    // })
-</script>
 </html>
