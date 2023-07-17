@@ -8,11 +8,11 @@ canvas.height = canvas.offsetHeight;
 ctx.translate(Math.floor(canvas.width/2),Math.floor(canvas.height/2));
 
 const settings = {
-    depth: 7,
+    depth: 8,
     lineWidth: 2,
     scale: 1,
-    opacity: 0.8,
-    lengthFractor: 0.75,
+    opacity: 0.7,
+    lengthFractor: 0.8,
 };
 
 const OFFSET = 0;
@@ -62,7 +62,7 @@ const drawFractal = (x,y,length,angle,depth,pAngle) => {
     let endY_min = y + length * Math.sin(angle.minute + pAngle);
 
     ctx.strokeStyle = colorArray[depth-1];
-
+    ctx.lineWidth = settings.lineWidth;
     ctx.beginPath();
     ctx.moveTo(x,y);
     ctx.lineTo(endX_sec,endY_sec);

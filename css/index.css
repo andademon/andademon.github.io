@@ -29,7 +29,7 @@ a:hover {
 .content {
     width: 50%;
     min-height: 85vh;
-    background-color: #fafafa;
+    /* background-color: #ffffff; */
     margin-top: 60px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -111,7 +111,6 @@ a:hover {
     .content {
         width: 85%;
         min-height: 85vh;
-        background-color: #ffffff;
         margin-top: 50px;
         margin-bottom: 10px;
         border-radius: 10px;
