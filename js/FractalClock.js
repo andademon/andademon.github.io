@@ -10,10 +10,15 @@ ctx.translate(Math.floor(canvas.width/2),Math.floor(canvas.height/2));
 const settings = {
     depth: 8,
     lineWidth: 2,
+    lineLength: 150,
     scale: 1,
     opacity: 0.7,
     lengthFractor: 0.8,
 };
+
+if(canvas.width < 768){
+    settings.lineLength = 200;
+}
 
 const OFFSET = 0;
 
@@ -84,7 +89,7 @@ const drawFractal = (x,y,length,angle,depth,pAngle) => {
 function animate() {
     clearCanvas();
     let angle = getAngle(); // 更新角度
-    drawFractal(0,0,150,angle,settings.depth,0);
+    drawFractal(0,0,settings.lineLength,angle,settings.depth,0);
     window.requestAnimationFrame(animate);
 }
 
