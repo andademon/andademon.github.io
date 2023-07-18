@@ -13,12 +13,12 @@
 }
 
 .type-text01 {
-    animation: type 3s steps(23);
+    animation: type 3s steps(38);
     animation-delay: 0s;
 }
 .type-text02 {
     opacity: 0;
-    animation: type 3s steps(43),fade-in 0.1s forwards;
+    animation: type 3s steps(24),fade-in 0.1s forwards;
     animation-delay: 4s;
 }
 
