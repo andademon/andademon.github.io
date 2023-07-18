@@ -145,8 +145,7 @@ a:hover {
     }
     #avatar {
         height: 200px;
-        width: auto;
-        /* width: 200px; */
+        width: 200px;
     }
 }
 

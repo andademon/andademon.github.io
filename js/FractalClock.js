@@ -16,10 +16,6 @@ const settings = {
     lengthFractor: 0.8,
 };
 
-// if(canvas.width < 768){
-//     settings.lineLength = 300;
-// }
-
 const OFFSET = 0;
 
 const getColorString = (layer) => {
