@@ -137,7 +137,8 @@ a:hover {
     }
 
     .avatar-box {
-        height: 210px;
+        height: 200px;
+        margin-bottom: 30px;
     }
     #avatar {
         height: 200px;
