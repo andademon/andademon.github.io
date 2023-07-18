@@ -101,6 +101,8 @@ a:hover {
 .paragraph-content {
     font-size: 1.1rem;
     white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
 }
 
 .paragraph-ul {
