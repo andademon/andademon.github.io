@@ -68,3 +68,9 @@
       opacity: 1;
     }
 }
+
+@media screen and (max-width: 768px){
+    .type-text {
+        font-size: 1.4rem;
+    }
+}
