@@ -102,6 +102,7 @@ a:hover {
     white-space: normal;
     word-break: break-all;
     word-wrap: break-word;
+    line-height: 1.8rem;
 }
 
 .paragraph-ul {
@@ -115,7 +116,7 @@ a:hover {
     }
     .content {
         width: 85%;
-        min-height: 85vh;
+        min-height: 100vh;
         margin-top: 20px;
         margin-bottom: 10px;
         border-radius: 10px;
@@ -130,13 +131,13 @@ a:hover {
         display: flex;
         flex-direction: row;
         align-items: center;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         text-align: center;
         border-left: 5px solid #5b5de7;
         padding-left: 2px;
     }
     .paragraph-content {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .avatar-box {
